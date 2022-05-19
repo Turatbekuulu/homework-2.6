@@ -36,7 +36,26 @@ print("\(result2) dollars")
 //3) - Составить программу с помощью функции sorted(), которая cортирует список имен по кол-ву букв по возрастанию.
 
 
-var names: [String] = ["Arsen", "Nurayim", "Bermet", "kalybek"]
-var sortedNames = names.sorted{ $0 < $1}
-print(sortedNames)
+var names: [String] = ["Arsen", "Nurayim", "Bermet", "Kalybek"]
+names.sort()
+
+struct User {
+    
+    var firstName: String
+}
+
+var users = [
+User(firstName: "Arsen"),
+User(firstName: "Nurayim"),
+User(firstName: "Bermet"),
+User(firstName: "Kalybek")
+]
+
+users.sort {
+    $0.firstName < $1.firstName
+}
+
+let sortedUsers = users.sorted {
+    $0.firstName < $1.firstName
+}
 
