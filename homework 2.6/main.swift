@@ -1,11 +1,42 @@
-//
-//  main.swift
-//  homework 2.6
-//
-//  Created by Mac on 19/5/22.
-//
+//1) - Составить замыкание, которое считает кол-во букв в нашем предложении, которое мы вводим в консоли
+print("Enter any sentence:")
+var anySentence = readLine()
 
-import Foundation
+//func countLetters(object1: String) -> Int {
+//
+//    for amountLetters in object1 {
+//        amountLetters
+//    }
+//    return object1.count
+//}
+//
+//var result = countLetters(object1: anySentence!)
+//print(result)
 
-print("Hello, World!")
+
+var countLetters: (String) -> Int
+countLetters = {$0.count}
+var result = countLetters(anySentence!)
+print("\(result) letters in the sentence")
+
+
+
+//2) - Составить замыкание, которое переводит наши деньги в курс доллара.
+
+print("Enter the sum which you want to became into the dollars:")
+var somIntoDollar = Double(readLine()!)!
+
+var becameIntoDollar: (Double) -> Double
+becameIntoDollar = {$0/82 }
+var result2 = becameIntoDollar(somIntoDollar)
+print("\(result2) dollars")
+
+
+
+//3) - Составить программу с помощью функции sorted(), которая cортирует список имен по кол-ву букв по возрастанию.
+
+
+var names: [String] = ["Arsen", "Nurayim", "Bermet", "kalybek"]
+var sortedNames = names.sorted{ $0 < $1}
+print(sortedNames)
 
