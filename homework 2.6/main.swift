@@ -40,7 +40,7 @@ var names: [String] = ["Arsen", "Nurayim", "Bermet", "Kalybek"]
 names.sort()
 
 struct User {
-    
+
     var firstName: String
 }
 
@@ -59,3 +59,24 @@ let sortedUsers = users.sorted {
     $0.firstName < $1.firstName
 }
 
+print(sortedUsers)
+
+
+
+//написать функцию аналогичную map() вручную используя цикл.
+
+var arrayInt: [Int] = [2, 4, 6]
+
+func myMap<T>(array: [Int], closuer: (Int) -> T) -> [T] {
+    var emptyArray: [T] = []
+    for object in array {
+        emptyArray.append(closuer(object))
+    }
+    return emptyArray
+}
+let result5 = myMap(array: arrayInt, closuer: {$0 * $0})
+print(result5)
+let result6 = myMap(array: arrayInt, closuer: {$0 + 10})
+print(result6)
+let result7 = myMap(array: arrayInt, closuer: {String($0)})
+print(result7)
